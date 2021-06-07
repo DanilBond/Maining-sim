@@ -8,6 +8,24 @@ public class MainMenuManager : MonoBehaviour
     public GameObject shopPanel;
     public GameObject objectPanel;
     public GameObject settingsPanel;
+    public Image[] imgs;
+    public Color ActiveColor;
+
+    public void CloseAll()
+    {
+        shopPanel.SetActive(false);
+        objectPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        foreach (Image i in imgs)
+        {
+            i.color = Color.white;
+        }
+    }
+
+    public void ActiveImage(Image img)
+    {
+        img.color = ActiveColor;
+    }
     public void ShopOpenPanel()
     {
         shopPanel.SetActive(true);

@@ -722,10 +722,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 30ddce09-14f7-430f-8fae-48b9f7974d01
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Maining_SIm
+  organizationId: sosgames75743
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

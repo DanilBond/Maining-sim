@@ -45,6 +45,10 @@ public class GPUandRIGManager : MonoBehaviour
     public List<GameObject> RX_6700XT;
     public List<GameObject> RX_6900;
 
+    public List<GameObject> RTX_5000;
+    public List<GameObject> RX_9000;
+    public List<GameObject> Intel_Predator;
+
 
     public List<GameObject> UpgradeList;
     //public List<GameObject> BudgetaryGPU;
@@ -217,6 +221,46 @@ public class GPUandRIGManager : MonoBehaviour
                 Debug.Log("COMBINE");
             }
 
+            if (XE.Count >= 3)
+            {
+
+                foreach (GameObject i in XE)
+                {
+                    AllGpu.Remove(i);
+                    AllGpuMain.Remove(i);
+                    Destroy(i);
+                }
+                XE.Clear();
+                BuyGpu(UpgradeList[12]);
+                Debug.Log("COMBINE");
+            }
+            if (RTX_5000.Count >= 3)
+            {
+
+                foreach (GameObject i in RTX_5000)
+                {
+                    AllGpu.Remove(i);
+                    AllGpuMain.Remove(i);
+                    Destroy(i);
+                }
+                RTX_5000.Clear();
+                BuyGpu(UpgradeList[13]);
+                Debug.Log("COMBINE");
+            }
+            if (RX_9000.Count >= 3)
+            {
+
+                foreach (GameObject i in RX_9000)
+                {
+                    AllGpu.Remove(i);
+                    AllGpuMain.Remove(i);
+                    Destroy(i);
+                }
+                RX_9000.Clear();
+                BuyGpu(UpgradeList[14]);
+                Debug.Log("COMBINE");
+            }
+
             //if (GoldGPU.Count >= 3)
             //{
 
@@ -281,7 +325,7 @@ public class GPUandRIGManager : MonoBehaviour
                 case "RX 570":
                     RX_570.Add(GpuMI);
                     break;
-                case "XE":
+                case "RED":
                     XE.Add(GpuMI);
                     break;
                 case "RTX 2060 Super":
@@ -301,6 +345,15 @@ public class GPUandRIGManager : MonoBehaviour
                     break;
                 case "RX 6900":
                     RX_6900.Add(GpuMI);
+                    break;
+                case "RTX 5000":
+                    RTX_5000.Add(GpuMI);
+                    break;
+                case "RX 9000":
+                    RX_9000.Add(GpuMI);
+                    break;
+                case "Predator":
+                    Intel_Predator.Add(GpuMI);
                     break;
             }
             

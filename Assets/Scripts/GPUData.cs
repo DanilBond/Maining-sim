@@ -18,12 +18,12 @@ public class GPUData : ScriptableObject
     {
         get
         {
-            return "Производитель: " + Name + "\n" +
-                "ГП: " +GP + "\n" +
-                "Энергоотребление: " + Power + "W" + "\n" +
-                "Доход за клик: " + Earning + "$" + "\n" +
-                "Доход за миниту: " + EarningPerTime + "$" + "\n" +
-                "Цена: " + Cost + "$"; ;
+            return Name + "\n" +
+                GP + "\n" +
+                Power + "W" + "\n" +
+                Earning + "$" + "\n" +
+                EarningPerTime + "$" + "\n" +
+                Cost + "$"; ;
         }
     }
 }

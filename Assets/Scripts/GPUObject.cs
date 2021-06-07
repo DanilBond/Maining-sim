@@ -18,12 +18,17 @@ public class GPUObject : MonoBehaviour
     }
     public void UpdateValues(float Damage)
     {
+        if(damage >= 99f)
+        {
+            damage = 100f;
+        }
         damageTxt.text = Damage.ToString("0") + "%";
         if (Damage < 35f) { damageTxt.color = Color.red; }
         if (Damage >= 35f && Damage <= 60f) { damageTxt.color = Color.yellow; }
         if (Damage > 60f) { damageTxt.color = Color.green; }
         damage = Damage;
         img.sprite = data.sprite;
+        
     }
     public void Sell()
     {

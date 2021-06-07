@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: IntelTop
   m_EditorClassIdentifier: 
   Name: Intel
-  GP: XE
+  GP: RED
   Power: 700
   Cost: 15000
   Temperature: 0
   Earning: 8
   EarningPerTime: 6
-  sprite: {fileID: 21300000, guid: ff72db8067ebcec4db19746cf57e90a7, type: 3}
+  sprite: {fileID: 21300000, guid: b417d24feb24461498ceade5a17dbad1, type: 3}
   myPrefab: {fileID: 8326251896792660138, guid: d1dda1e5f5ae55d42ada29198a115de8,
     type: 3}

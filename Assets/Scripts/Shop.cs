@@ -7,11 +7,14 @@ public class Shop : MonoBehaviour
 {
     public GameObject ShopPopUp;
     public Text ShopTxt;
+    public Text ShopName;
     public Image ShopImg;
     public Button ShopBtn;
 
     public GameObject ObjectsPopUp;
     public Text ObjectsTxt;
+    public Text ObjectsName;
+    public Text TxtPop;
     public Image ObjectsImg;
     public Button ObjectsBtnSell;
     public Button ObjectsBtnWork;

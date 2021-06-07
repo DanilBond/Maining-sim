@@ -46,7 +46,7 @@ public class MoneyManager : MonoBehaviour
 	{
 		foreach(Text i in moneyTxt)
 		{
-			i.text = MoneyCount + "$";
+			i.text = MoneyCount.ToString();
 		}
 	}
 

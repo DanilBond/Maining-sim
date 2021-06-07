@@ -13,6 +13,7 @@ public class GPU : MonoBehaviour
     public Tear tear;
 
     public Text desc;
+    public Text name;
     public enum Tear
     {
         budgetary,
@@ -28,12 +29,16 @@ public class GPU : MonoBehaviour
         if (desc != null)
         {
             desc.text =
-                "Производитель: " + data.Name + "\n" +
-                "ГП: " + data.GP + "\n" +
-                "Энергоотребление: " + data.Power + "W" + "\n" +
-                "Доход за клик: " + data.Earning + "$" + "\n" +
-                "Доход за миниту: " + data.EarningPerTime + "$" + "\n" +
-                "Цена: " + data.Cost + "$";
+                data.Name + "\n" +
+                data.GP + "\n" +
+                data.Power + "W" + "\n" +
+                data.Earning + "$" + "\n" +
+                data.EarningPerTime + "$" + "\n" +
+                data.Cost + "$";
+        }
+        if (name != null)
+        {
+            name.text = "Видеокарта "+data.Name;
         }
         transform.Find("Image").gameObject.GetComponent<Image>().sprite = img;
 

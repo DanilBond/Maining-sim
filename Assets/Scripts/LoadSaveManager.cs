@@ -36,6 +36,8 @@ public class LoadSaveManager : MonoBehaviour
         GPUNameSaveDataOBJ.Clear();
         GPUDamageSaveDataOBJ.Clear();
         GPUDamageSaveData.Clear();
+        PlayerPrefs.SetInt("PowerMaxSlots",FindObjectOfType<PowerSupply>().maxSlots);
+        PlayerPrefs.SetInt("PowerCurrentSlots",FindObjectOfType<PowerSupply>().currentSlots);
         for(int i = 0; i<GpuContentMain.transform.childCount;i++)
         {
             GPUNameSaveData.Add(GpuContentMain.transform.GetChild(i).GetComponent<GPUMainPanelObject>().data.GP);
@@ -77,6 +79,9 @@ public class LoadSaveManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("FirstTime"))
         {
+            //POWER
+            FindObjectOfType<PowerSupply>().maxSlots = 9999999;
+            
             //GPU
             int countMain = PlayerPrefs.GetInt("gpumaincount");
             for (int i = 0; i < countMain; i++)
@@ -125,6 +130,9 @@ public class LoadSaveManager : MonoBehaviour
             FindObjectOfType<EnergyManager>().UpdateValues();
             //Money
             FindObjectOfType<MoneyManager>().SetMoney(PlayerPrefs.GetInt("Money"));
+            //POWER
+            FindObjectOfType<PowerSupply>().maxSlots = PlayerPrefs.GetInt("PowerMaxSlots");
+            FindObjectOfType<PowerSupply>().UpdateValues();
         }
     }
 

@@ -126,6 +126,24 @@ public class RepairManager : MonoBehaviour
                 GARM.RX_6900.Remove(i);
                 Destroy(i);
                 break;
+            case "Predator":
+                GARM.AllGpu.Remove(i);
+                GARM.AllGpuMain.Remove(i);
+                GARM.Intel_Predator.Remove(i);
+                Destroy(i);
+                break;
+            case "RTX 5000":
+                GARM.AllGpu.Remove(i);
+                GARM.AllGpuMain.Remove(i);
+                GARM.RTX_5000.Remove(i);
+                Destroy(i);
+                break;
+            case "RX 9000":
+                GARM.AllGpu.Remove(i);
+                GARM.AllGpuMain.Remove(i);
+                GARM.RX_9000.Remove(i);
+                Destroy(i);
+                break;
 
         }
         yield return new WaitForSeconds(0.015f);

@@ -382,9 +382,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0c6e9bcc97ea68a43b49df6854ff63b0, type: 2}
   myPrefab: {fileID: 8326251896792660138}
-  img: {fileID: 21300000, guid: ff72db8067ebcec4db19746cf57e90a7, type: 3}
+  img: {fileID: 21300000, guid: b417d24feb24461498ceade5a17dbad1, type: 3}
   tear: 3
   desc: {fileID: 8326251896532091040}
+  name: {fileID: 0}
 --- !u!114 &23720485
 MonoBehaviour:
   m_ObjectHideFlags: 0
