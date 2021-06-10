@@ -62,6 +62,21 @@ public class GPUandRIGManager : MonoBehaviour
             Check();
         }
     }
+    /*
+     0 1050V
+     1 rtx3090V
+     2 rx570V
+     3 intelx
+     4 rtx2060super
+     5 rx590sapphere
+     6 6700xt
+     7 rtx4000
+     8 intelXE
+     9 rx6900
+     10 rtx5000
+     11 rx9000
+     12 intelpredator
+         */
     public void Check() //Проверяет всё и если видеокарт больше 4 то стакает их, то же и с ригами
     {
         if (AllGpu.Count != 0)
@@ -92,23 +107,19 @@ public class GPUandRIGManager : MonoBehaviour
                 BuyGpu(UpgradeList[2]);
                 Debug.Log("COMBINE");
             }
-            if (RX_570.Count >= 3)
+            if (RX_5600.Count >= 3)
             {
 
-                foreach (GameObject i in RX_570)
+                foreach (GameObject i in RX_5600)
                 {
                     AllGpu.Remove(i);
                     AllGpuMain.Remove(i);
                     Destroy(i);
                 }
-                RX_570.Clear();
+                RX_5600.Clear();
                 BuyGpu(UpgradeList[3]);
                 Debug.Log("COMBINE");
             }
-
-
-
-            
             if (RTX_3090.Count >= 3)
             {
 
@@ -122,17 +133,16 @@ public class GPUandRIGManager : MonoBehaviour
                 BuyGpu(UpgradeList[4]);
                 Debug.Log("COMBINE");
             }
-
-            if (RX_5600.Count >= 3)
+            if (RX_570.Count >= 3)
             {
 
-                foreach (GameObject i in RX_5600)
+                foreach (GameObject i in RX_570)
                 {
                     AllGpu.Remove(i);
                     AllGpuMain.Remove(i);
                     Destroy(i);
                 }
-                RX_5600.Clear();
+                RX_570.Clear();
                 BuyGpu(UpgradeList[5]);
                 Debug.Log("COMBINE");
             }
@@ -149,9 +159,6 @@ public class GPUandRIGManager : MonoBehaviour
                 BuyGpu(UpgradeList[6]);
                 Debug.Log("COMBINE");
             }
-
-
-
             if (RTX_2060_Super.Count >= 3)
             {
 
@@ -165,20 +172,6 @@ public class GPUandRIGManager : MonoBehaviour
                 BuyGpu(UpgradeList[7]);
                 Debug.Log("COMBINE");
             }
-
-            if (RX_6700XT.Count >= 3)
-            {
-
-                foreach (GameObject i in RX_6700XT)
-                {
-                    AllGpu.Remove(i);
-                    AllGpuMain.Remove(i);
-                    Destroy(i);
-                }
-                RX_6700XT.Clear();
-                BuyGpu(UpgradeList[8]);
-                Debug.Log("COMBINE");
-            }
             if (RX_590.Count >= 3)
             {
 
@@ -189,11 +182,22 @@ public class GPUandRIGManager : MonoBehaviour
                     Destroy(i);
                 }
                 RX_590.Clear();
+                BuyGpu(UpgradeList[8]);
+                Debug.Log("COMBINE");
+            }
+            if (RX_6700XT.Count >= 3)
+            {
+
+                foreach (GameObject i in RX_6700XT)
+                {
+                    AllGpu.Remove(i);
+                    AllGpuMain.Remove(i);
+                    Destroy(i);
+                }
+                RX_6700XT.Clear();
                 BuyGpu(UpgradeList[9]);
                 Debug.Log("COMBINE");
             }
-
-
             if (RTX_4000.Count >= 3)
             {
 
@@ -207,20 +211,6 @@ public class GPUandRIGManager : MonoBehaviour
                 BuyGpu(UpgradeList[10]);
                 Debug.Log("COMBINE");
             }
-            if (RX_6900.Count >= 3)
-            {
-
-                foreach (GameObject i in RX_6900)
-                {
-                    AllGpu.Remove(i);
-                    AllGpuMain.Remove(i);
-                    Destroy(i);
-                }
-                RX_6900.Clear();
-                BuyGpu(UpgradeList[11]);
-                Debug.Log("COMBINE");
-            }
-
             if (XE.Count >= 3)
             {
 
@@ -231,35 +221,73 @@ public class GPUandRIGManager : MonoBehaviour
                     Destroy(i);
                 }
                 XE.Clear();
+                BuyGpu(UpgradeList[11]);
+                Debug.Log("COMBINE");
+            }
+            if (RX_6900.Count >= 3)
+            {
+
+                foreach (GameObject i in RX_6900)
+                {
+                    AllGpu.Remove(i);
+                    AllGpuMain.Remove(i);
+                    Destroy(i);
+                }
+                RX_6900.Clear();
                 BuyGpu(UpgradeList[12]);
                 Debug.Log("COMBINE");
             }
-            if (RTX_5000.Count >= 3)
-            {
 
-                foreach (GameObject i in RTX_5000)
-                {
-                    AllGpu.Remove(i);
-                    AllGpuMain.Remove(i);
-                    Destroy(i);
-                }
-                RTX_5000.Clear();
-                BuyGpu(UpgradeList[13]);
-                Debug.Log("COMBINE");
-            }
-            if (RX_9000.Count >= 3)
-            {
 
-                foreach (GameObject i in RX_9000)
-                {
-                    AllGpu.Remove(i);
-                    AllGpuMain.Remove(i);
-                    Destroy(i);
-                }
-                RX_9000.Clear();
-                BuyGpu(UpgradeList[14]);
-                Debug.Log("COMBINE");
-            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //if (RTX_5000.Count >= 3)
+            //{
+
+            //    foreach (GameObject i in RTX_5000)
+            //    {
+            //        AllGpu.Remove(i);
+            //        AllGpuMain.Remove(i);
+            //        Destroy(i);
+            //    }
+            //    RTX_5000.Clear();
+            //    BuyGpu(UpgradeList[13]);
+            //    Debug.Log("COMBINE");
+            //}
+            //if (RX_9000.Count >= 3)
+            //{
+
+            //    foreach (GameObject i in RX_9000)
+            //    {
+            //        AllGpu.Remove(i);
+            //        AllGpuMain.Remove(i);
+            //        Destroy(i);
+            //    }
+            //    RX_9000.Clear();
+            //    BuyGpu(UpgradeList[14]);
+            //    Debug.Log("COMBINE");
+            //}
 
             //if (GoldGPU.Count >= 3)
             //{
