@@ -36,6 +36,15 @@ public class GPUObject : MonoBehaviour
         FindObjectOfType<MoneyManager>().AddMoney(data.Cost);
         GetComponent<GPUPopUp>().GpuPopUp.SetActive(false);
         FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Remove(gameObject);
+
+        if (FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Count <= 0)
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(false);
+        }
     }
     public void Work()
     {
@@ -44,5 +53,14 @@ public class GPUObject : MonoBehaviour
         GetComponent<GPUPopUp>().GpuPopUp.SetActive(false);
         FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Remove(gameObject);
         FindObjectOfType<GPUandRIGManager>().BuyGpu(data.myPrefab);
+
+        if (FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Count <= 0)
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(false);
+        }
     }
 }

@@ -13,15 +13,19 @@ public class Click : MonoBehaviour,IPointerClickHandler
     EnergyManager EM;
 
     public GameObject CoinVFX;
+    public GameObject SmokeVFX;
     public ParticleSystem[] Particles;
 
     public float delay;
+
+    AudioManager AM;
     private void Start()
     {
         MM = FindObjectOfType<MoneyManager>();
         GARM = FindObjectOfType<GPUandRIGManager>();
         EM = FindObjectOfType<EnergyManager>();
         Particles = FindObjectsOfType<ParticleSystem>();
+        AM = FindObjectOfType<AudioManager>();
         StartCoroutine(researchParticles());
     }
     IEnumerator researchParticles()
@@ -42,11 +46,20 @@ public class Click : MonoBehaviour,IPointerClickHandler
                 MM.AddMoney((int)GARM.Earning);
                 // GameObject VFX = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), VFXTransform);
                 // VFX.GetComponent<Text>().text = (int)GARM.Earning + "$";
-                foreach (ParticleSystem i in Particles)
+                int normCount = 0;
+                for (int i = 0; i < GARM.AllGpuMain.Count; i++)
                 {
-                    i.Play();
+                    if(GARM.AllGpuMain[i].GetComponent<GPUMainPanelObject>().Damage > 1f)
+                    {
+                        GARM.AllGpuMain[i].transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+                        normCount++;
+                    }
                 }
-                EM.RemoveEnergy(1);
+                if (normCount >0)
+                {
+                    AM.PlayAudio(2);
+                    EM.RemoveEnergy(1);
+                }
                 for (int i = 0; i < GARM.AllGpu.Count; i++)
                 {
 

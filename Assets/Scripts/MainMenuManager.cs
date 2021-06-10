@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
     public Image[] imgs;
     public Color ActiveColor;
 
+    public GameObject noneText;
     public void CloseAll()
     {
         shopPanel.SetActive(false);
@@ -33,6 +34,14 @@ public class MainMenuManager : MonoBehaviour
     public void ObjectListOpenPanel()
     {
         objectPanel.SetActive(true);
+        if(FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Count <= 0)
+        {
+            noneText.SetActive(true);
+        }
+        else
+        {
+            noneText.SetActive(false);
+        }
     }
   
     public void SettingsPanel()

@@ -19,6 +19,6 @@ MonoBehaviour:
   Temperature: 0
   Earning: 9
   EarningPerTime: 10
-  sprite: {fileID: 21300000, guid: 73584ec7dc5011349a755458b966c633, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: 045787c9a024c8343a527c81b667e60c,
+  sprite: {fileID: 21300000, guid: dbdb4cb2e9dc3914989e4413017f9ab3, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: a7ffaf11018e1f1479ff1f80f252cbae,
     type: 3}

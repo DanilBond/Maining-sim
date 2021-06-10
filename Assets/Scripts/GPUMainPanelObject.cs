@@ -11,10 +11,9 @@ public class GPUMainPanelObject : MonoBehaviour
     public string tear;
     [SerializeField] Text damageTxt;
 
-    Animator anim;
+    public Animator anim;
     private void Start()
     {
-        anim = GetComponent<Animator>();
         switch (data.GP)
         {
             case "1050 TI":
@@ -69,11 +68,12 @@ public class GPUMainPanelObject : MonoBehaviour
     {
        
     }
-
+    bool ok = true;
     public void UpdateValues()
     {
         damageTxt.text = Damage.ToString("0") + "%";
-        if (Damage < 35f) { damageTxt.color = Color.red; }
+        if (Damage < 1f) { if (ok) { FindObjectOfType<AudioManager>().PlayAudio(4); anim.enabled = false; Damage = 0f; damageTxt.text = "0%"; ok = false; } }
+        if (Damage < 35f) { damageTxt.color = Color.red; gameObject.transform.GetChild(2).GetComponent<ParticleSystem>().Play(); }
         if (Damage >= 35f && Damage <= 60f) { damageTxt.color = Color.yellow; }
         if (Damage > 60f) { damageTxt.color = Color.green; }
         GetComponent<Image>().sprite = data.sprite;

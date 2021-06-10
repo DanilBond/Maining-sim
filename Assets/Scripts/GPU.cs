@@ -54,6 +54,10 @@ public class GPU : MonoBehaviour
                 FindObjectOfType<GPUandRIGManager>().BuyGpu(this.gameObject);
             }
         }
+        else
+        {
+            FindObjectOfType<Shop>().NoPower.SetActive(true);
+        }
     }
     
     

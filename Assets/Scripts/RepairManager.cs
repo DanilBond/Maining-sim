@@ -43,7 +43,7 @@ public class RepairManager : MonoBehaviour
                 GameObject Gpu = Instantiate(GARM.GPUObjectPrefab, GARM.objectsContent.transform);
                 Gpu.GetComponent<GPUObject>().data = i.GetComponent<GPUMainPanelObject>().data;
                 Gpu.GetComponent<GPUObject>().UpdateValues(i.GetComponent<GPUMainPanelObject>().Damage);
-                
+                FindObjectOfType<AudioManager>().PlayAudio(1);
                 GARM.AllGpuObjects.Add(Gpu);
             }
         }

@@ -14,12 +14,14 @@ public class Shop : MonoBehaviour
     public GameObject ObjectsPopUp;
     public Text ObjectsTxt;
     public Text ObjectsName;
+    public Text ObjectsDamage;
     public Text TxtPop;
     public Image ObjectsImg;
     public Button ObjectsBtnSell;
     public Button ObjectsBtnWork;
 
     public GameObject RepairPopUp;
+    public GameObject NoPower;
     void Start()
     {
         

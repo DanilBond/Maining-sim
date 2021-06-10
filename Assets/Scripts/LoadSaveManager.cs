@@ -29,9 +29,12 @@ public class LoadSaveManager : MonoBehaviour
     }
     public void Save()
     {
-       
+
         //GPU
+        string sounds = PlayerPrefs.GetString("Sounds");
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("Sounds", sounds);
+        PlayerPrefs.SetString("FirstStart", "Completed");
         GPUNameSaveData.Clear();
         GPUNameSaveDataOBJ.Clear();
         GPUDamageSaveDataOBJ.Clear();
