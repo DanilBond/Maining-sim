@@ -33,15 +33,14 @@ public class GPU : MonoBehaviour
                 data.GP + "\n" +
                 data.Power + "W" + "\n" +
                 data.Earning + "$" + "\n" +
-                data.EarningPerTime + "$" + "\n" +
-                data.Cost + "$";
+                data.EarningPerTime + "$" + "\n";
         }
         if (name != null)
         {
             name.text = "Видеокарта "+data.Name;
         }
         transform.Find("Image").gameObject.GetComponent<Image>().sprite = img;
-
+        transform.Find("Button").gameObject.transform.GetChild(0).GetComponent<Text>().text = data.Cost + "$";
     }
 
     public void Buy()
