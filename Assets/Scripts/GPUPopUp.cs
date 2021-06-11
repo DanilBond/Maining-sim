@@ -28,7 +28,7 @@ public class GPUPopUp : MonoBehaviour, IPointerClickHandler
                 GpuPopUp = FindObjectOfType<Shop>().RepairPopUp;
                 break;
         }
-        StartCoroutine(checkIE());
+        
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
@@ -66,47 +66,37 @@ public class GPUPopUp : MonoBehaviour, IPointerClickHandler
         }
     }
     public GPUObject GPUObj;
-
+    Shop shop;
     public void ObjectInspect(GPUObject GpuObj)
     {
+        shop = FindObjectOfType<Shop>();
         GpuPopUp.SetActive(true);
         GPUObj = GpuObj;
-    }
 
-    IEnumerator checkIE()
+    }
+    private void Update()
     {
-        while (true)
+        if (GPUObj != null)
         {
-            yield return new WaitForSeconds(0.4f);
-            if (GpuPopUp.activeSelf == true)
+            GPUObj.UpdateValues(GPUObj.damage);
+            if (GPUObj.damage < 35f) { shop.ObjectsDamage.color = Color.red; }
+            if (GPUObj.damage >= 35f && GPUObj.damage <= 60f) { FindObjectOfType<Shop>().ObjectsDamage.color = Color.yellow; }
+            if (GPUObj.damage > 60f) { shop.ObjectsDamage.color = Color.green; }
+            shop.ObjectsImg.sprite = GPUObj.data.sprite;
+            shop.ObjectsTxt.text = GPUObj.data.Desc;
+            shop.ObjectsDamage.text = GPUObj.damage.ToString("0") + "%";
+            shop.ObjectsName.text = "Видеокарта " + GPUObj.data.Name;
+            shop.ObjectsBtnSell.onClick.RemoveAllListeners();
+            shop.ObjectsBtnSell.onClick.AddListener(GPUObj.Sell);
+            shop.ObjectsBtnWork.onClick.RemoveAllListeners();
+            shop.ObjectsBtnWork.onClick.AddListener(GPUObj.Work);
+            if (GPUObj.damage <= 99f)
             {
-                if (GPUObj != null)
-                {
-                    GPUObj.UpdateValues(GPUObj.damage);
-                    if (GPUObj.damage < 35f) { FindObjectOfType<Shop>().ObjectsDamage.color = Color.red; }
-                    if (GPUObj.damage >= 35f && GPUObj.damage <= 60f) { FindObjectOfType<Shop>().ObjectsDamage.color = Color.yellow; }
-                    if (GPUObj.damage > 60f) { FindObjectOfType<Shop>().ObjectsDamage.color = Color.green; }
-                    FindObjectOfType<Shop>().ObjectsImg.sprite = GPUObj.data.sprite;
-                    FindObjectOfType<Shop>().ObjectsTxt.text = GPUObj.data.Desc;
-                    FindObjectOfType<Shop>().ObjectsDamage.text = GPUObj.damage.ToString("0") + "%";
-                    FindObjectOfType<Shop>().ObjectsName.text = "Видеокарта " + GPUObj.data.Name;
-                    FindObjectOfType<Shop>().ObjectsBtnSell.onClick.RemoveAllListeners();
-                    FindObjectOfType<Shop>().ObjectsBtnSell.onClick.AddListener(GPUObj.Sell);
-                    FindObjectOfType<Shop>().ObjectsBtnWork.onClick.RemoveAllListeners();
-                    FindObjectOfType<Shop>().ObjectsBtnWork.onClick.AddListener(GPUObj.Work);
-                    if (GPUObj.damage <= 99f)
-                    {
-                        FindObjectOfType<Shop>().ObjectsBtnWork.interactable = false;
-                    }
-                    else
-                    {
-                        FindObjectOfType<Shop>().ObjectsBtnWork.interactable = true;
-                    }
-                }
+                shop.ObjectsBtnWork.interactable = false;
             }
             else
             {
-                GPUObj = null;
+                shop.ObjectsBtnWork.interactable = true;
             }
         }
     }

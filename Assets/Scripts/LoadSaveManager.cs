@@ -19,13 +19,23 @@ public class LoadSaveManager : MonoBehaviour
     public GameObject[] Gpus;
     public GameObject[] GpusOBJ;
 
+    public float delay;
     private void Start()
     {
         Load();
+        StartCoroutine(SaveIE());
     }
     private void OnApplicationQuit()
     {
         Save();
+    }
+    IEnumerator SaveIE()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delay);
+            Save();
+        }
     }
     public void Save()
     {

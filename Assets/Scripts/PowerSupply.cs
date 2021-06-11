@@ -33,5 +33,9 @@ public class PowerSupply : MonoBehaviour
             maxSlots++;
             UpdateValues();
         }
+        else
+        {
+            FindObjectOfType<MoneyManager>().noMoney.SetActive(true);
+        }
     }
 }

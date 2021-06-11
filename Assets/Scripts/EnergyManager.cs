@@ -35,14 +35,17 @@ public class EnergyManager : MonoBehaviour
 
     public void BuyEnergy()
     {
-        if (energyCount < 100)
-        {
-            if (FindObjectOfType<MoneyManager>().GetCurrentMoneyCount() >= 1)
+        
+            if (FindObjectOfType<MoneyManager>().GetCurrentMoneyCount() >= 100)
             {
-                energyCount = 100;
+                energyCount += 100;
                 FindObjectOfType<MoneyManager>().RemoveMoney(100);
                 UpdateValues();
             }
+        else
+        {
+            FindObjectOfType<MoneyManager>().noMoney.SetActive(true);
         }
+        
     }
 }

@@ -12,6 +12,7 @@ public class MoneyManager : MonoBehaviour
 	[Header("----------OTHER----------")]
 	public Text[] moneyTxt;
 
+	public GameObject noMoney;
 	private void Start()
 	{
 		UpdateMoney();

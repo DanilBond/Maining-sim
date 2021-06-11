@@ -10,10 +10,16 @@ public class MainMenuManager : MonoBehaviour
     public GameObject settingsPanel;
     public Image[] imgs;
     public Color ActiveColor;
-
+    public GameObject objectPopUp;
+    public Transform objContent;
     public GameObject noneText;
     public void CloseAll()
     {
+        objectPopUp.SetActive(false);
+        foreach (Transform i in objContent.transform)
+        {
+            i.GetComponent<GPUPopUp>().GPUObj = null;
+        }
         shopPanel.SetActive(false);
         objectPanel.SetActive(false);
         settingsPanel.SetActive(false);
@@ -22,7 +28,14 @@ public class MainMenuManager : MonoBehaviour
             i.color = Color.white;
         }
     }
-
+    public void ClosePopUp()
+    {
+        objectPopUp.SetActive(false);
+        foreach (Transform i in objContent.transform)
+        {
+            i.GetComponent<GPUPopUp>().GPUObj = null;
+        }
+    }
     public void ActiveImage(Image img)
     {
         img.color = ActiveColor;

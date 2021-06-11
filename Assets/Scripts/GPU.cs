@@ -53,6 +53,10 @@ public class GPU : MonoBehaviour
                 MM.RemoveMoney(data.Cost);
                 FindObjectOfType<GPUandRIGManager>().BuyGpu(this.gameObject);
             }
+            else
+            {
+                FindObjectOfType<MoneyManager>().noMoney.SetActive(true);
+            }
         }
         else
         {
