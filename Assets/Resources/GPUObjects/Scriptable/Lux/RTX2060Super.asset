@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
-  m_Name: RX590Sappere
+  m_Name: RTX2060Super
   m_EditorClassIdentifier: 
-  Name: Radeon
-  GP: RX 590
-  Power: 550
-  Cost: 6000
+  Name: Greenvidia
+  GP: RTX 2077 S
+  Power: 450
+  Cost: 12300
   Temperature: 0
-  Earning: 6.8
-  EarningPerTime: 3.75
-  sprite: {fileID: 21300000, guid: 201c525e04e2124489db90c5f084aa26, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: 8c57c16a377179842aa67f92a1871e6a,
+  Earning: 44
+  EarningPerTime: 9
+  sprite: {fileID: 21300000, guid: 0b8b0bbb0a0190b4f81eda71bcc07b38, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: fb8a587bb0f8a184980814f6d5d05ba9,
     type: 3}

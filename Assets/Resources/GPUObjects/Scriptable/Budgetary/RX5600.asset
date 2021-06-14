@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
-  m_Name: IntelTop
+  m_Name: RX5600
   m_EditorClassIdentifier: 
-  Name: Intel
-  GP: RED
-  Power: 700
-  Cost: 15000
+  Name: RedMD
+  GP: RED RX 475
+  Power: 375
+  Cost: 1200
   Temperature: 0
-  Earning: 8
-  EarningPerTime: 6
-  sprite: {fileID: 21300000, guid: b417d24feb24461498ceade5a17dbad1, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: d1dda1e5f5ae55d42ada29198a115de8,
+  Earning: 4.3
+  EarningPerTime: 0.5
+  sprite: {fileID: 21300000, guid: 7dab5c2e5d676324da33f52a64f1989c, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: 611049a9c6eb1424982c1234552f5b62,
     type: 3}

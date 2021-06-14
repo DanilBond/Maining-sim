@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 8326251896792660140}
   - component: {fileID: 23720485}
   m_Layer: 5
-  m_Name: GPURX570
+  m_Name: RX5600
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,9 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf91378818aa22c4c9359bfe696a8fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 8678d1c47b9dcb845acb07e8555bfa99, type: 2}
+  data: {fileID: 11400000, guid: 6f9d99fbadf7b01458ef5c2e00b125bb, type: 2}
   myPrefab: {fileID: 8326251896792660138}
-  img: {fileID: 21300000, guid: ba003ce803ec1574d8b6aa10cf7c3cd3, type: 3}
+  img: {fileID: 21300000, guid: 7dab5c2e5d676324da33f52a64f1989c, type: 3}
   tear: 0
   desc: {fileID: 8326251896532091040}
   name: {fileID: 0}
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GpuPopUp: {fileID: 0}
   type: 0
+  GPUObj: {fileID: 0}
 --- !u!1 &8326251897374309242
 GameObject:
   m_ObjectHideFlags: 0

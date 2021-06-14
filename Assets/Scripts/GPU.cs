@@ -28,19 +28,35 @@ public class GPU : MonoBehaviour
     {
         if (desc != null)
         {
-            desc.text =
+            if (data.Cost != 0)
+            {
+                desc.text =
                 data.Name + "\n" +
                 data.GP + "\n" +
                 data.Power + "W" + "\n" +
                 data.Earning + "$" + "\n" +
                 data.EarningPerTime + "$" + "\n";
+            }
+            else
+            {
+                desc.text =
+                data.Name + "\n" +
+                data.GP + "\n" +
+                data.Power + "W" + "\n" +
+                data.Earning + "$" + "\n" +
+                data.EarningPerTime + "$" + "\n"
+                + "-";
+            }
         }
         if (name != null)
         {
             name.text = "Видеокарта "+data.Name;
         }
         transform.Find("Image").gameObject.GetComponent<Image>().sprite = img;
-        transform.Find("Button").gameObject.transform.GetChild(0).GetComponent<Text>().text = data.Cost + "$";
+        if (data.Cost != 0)
+        {
+            transform.Find("Button").gameObject.transform.GetChild(0).GetComponent<Text>().text = data.Cost + "$";
+        }
     }
 
     public void Buy()

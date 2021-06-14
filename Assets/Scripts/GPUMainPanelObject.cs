@@ -12,53 +12,55 @@ public class GPUMainPanelObject : MonoBehaviour
     [SerializeField] Text damageTxt;
 
     public Animator anim;
+    AudioManager audio;
     private void Start()
     {
+        audio = FindObjectOfType<AudioManager>();
         switch (data.GP)
         {
-            case "1050 TI":
+            case "GTX 1040TI":
                 anim.SetBool("gtx1050", true);
                 break;
-            case "Graphics 1":
+            case "Graphics 1X":
                 anim.SetBool("intel1", true);
                 break;
-            case "X":
+            case "Graphics XS":
                 anim.SetBool("intelX", true);
                 break;
-            case "RED":
+            case "RED 7900 XT":
                 anim.SetBool("intelRed", true);
                 break;
-            case "RTX 2060 Super":
+            case "RTX 2077 S":
                 anim.SetBool("rtx2060", true);
                 break;
-            case "RTX 3090":
+            case "RTX 2000":
                 anim.SetBool("rtx3090", true);
                 break;
-            case "RTX 4000":
+            case "RTX 4000G":
                 anim.SetBool("rtx4000", true);
                 break;
-            case "RX 570":
+            case "REDEON 580":
                 anim.SetBool("rx570", true);
                 break;
-            case "RX 590":
+            case "Graphics Blue+":
                 anim.SetBool("rx590", true);
                 break;
-            case "RX 5600":
+            case "RED RX 475":
                 anim.SetBool("rx5600", true);
                 break;
-            case "RX 6700XT":
+            case "RED 6700XT":
                 anim.SetBool("rx6700", true);
                 break;
-            case "RX 6900":
+            case "Blue GOLD XE":
                 anim.SetBool("rx6900", true);
                 break;
-            case "Predator":
+            case "RTX Emerald":
                 anim.SetBool("predator", true);
                 break;
-            case "RTX 5000":
+            case "Briliant Blue":
                 anim.SetBool("rtx5000", true);
                 break;
-            case "RX 9000":
+            case "RED Ruby XT":
                 anim.SetBool("rx9000", true);
                 break;
         }
@@ -66,14 +68,22 @@ public class GPUMainPanelObject : MonoBehaviour
 
     private void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            int first = 1;
+            float q = 1.2f;
+            
+            for (int i = 0; i < 16; i++)
+            {
+                Debug.Log(i + "= " + first * Mathf.Pow(q,i));
+            }
+        }
     }
     bool ok = true;
     public void UpdateValues()
     {
         damageTxt.text = Damage.ToString("0") + "%";
-        if (Damage < 1f) { if (ok) { FindObjectOfType<AudioManager>().PlayAudio(4); anim.enabled = false; Damage = 0f; damageTxt.text = "0%"; ok = false; } }
-        if (Damage < 35f) { damageTxt.color = Color.red; gameObject.transform.GetChild(2).GetComponent<ParticleSystem>().Play(); }
+        if (Damage < 1f) { if (ok) { if (audio != null) { audio.PlayAudio(4); } if (anim != null) { anim.enabled = false; } Damage = 0f; if (damageTxt != null) { damageTxt.text = "0%"; } ok = false; } }
+        if (Damage < 35f) { damageTxt.color = Color.red; gameObject.transform.GetChild(2).GetChild(0).GetComponent<ParticleSystem>().Play(); }
         if (Damage >= 35f && Damage <= 60f) { damageTxt.color = Color.yellow; }
         if (Damage > 60f) { damageTxt.color = Color.green; }
         GetComponent<Image>().sprite = data.sprite;

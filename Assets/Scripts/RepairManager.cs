@@ -34,6 +34,7 @@ public class RepairManager : MonoBehaviour
     }
     public void Repair()
     {
+        int numOfGetsRepairGPUs = 0;
         foreach (GameObject i in GARM.AllGpu)
         {
             if(i.GetComponent<GPUMainPanelObject>().Damage <= 35f)
@@ -45,7 +46,18 @@ public class RepairManager : MonoBehaviour
                 Gpu.GetComponent<GPUObject>().UpdateValues(i.GetComponent<GPUMainPanelObject>().Damage);
                 FindObjectOfType<AudioManager>().PlayAudio(1);
                 GARM.AllGpuObjects.Add(Gpu);
+                numOfGetsRepairGPUs++;
             }
+        }
+        FindObjectOfType<PowerSupply>().currentSlots -= numOfGetsRepairGPUs;
+        FindObjectOfType<PowerSupply>().UpdateValues();
+        if (FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Count <= 0)
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<MainMenuManager>().noneText.SetActive(false);
         }
     }
 
@@ -54,91 +66,91 @@ public class RepairManager : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         switch (i.GetComponent<GPUMainPanelObject>().data.GP)
         {
-            case "1050 TI":
+            case "GTX 1040TI":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.GTX1050.Remove(i);
                 Destroy(i);
                 break;
-            case "Graphics 1":
+            case "Graphics 1X":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.Graphics_1.Remove(i);
                 Destroy(i);
                 break;
-            case "X":
+            case "Graphics XS":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.X.Remove(i);
                 Destroy(i);
                 break;
-            case "RTX 3090":
+            case "RTX 2000":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RTX_3090.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 570":
+            case "REDEON 580":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_570.Remove(i);
                 Destroy(i);
                 break;
-            case "XE":
+            case "RED 7900 XT":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.XE.Remove(i);
                 Destroy(i);
                 break;
-            case "RTX 2060 Super":
+            case "RTX 2077 S":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RTX_2060_Super.Remove(i);
                 Destroy(i);
                 break;
-            case "RTX 4000":
+            case "RTX 4000G":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RTX_4000.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 590":
+            case "Graphics Blue+":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_590.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 5600":
+            case "RED RX 475":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_5600.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 6700XT":
+            case "RED 6700XT":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_6700XT.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 6900":
+            case "Blue GOLD XE":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_6900.Remove(i);
                 Destroy(i);
                 break;
-            case "Predator":
+            case "RTX Emerald":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.Intel_Predator.Remove(i);
                 Destroy(i);
                 break;
-            case "RTX 5000":
+            case "Briliant Blue":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RTX_5000.Remove(i);
                 Destroy(i);
                 break;
-            case "RX 9000":
+            case "RED Ruby XT":
                 GARM.AllGpu.Remove(i);
                 GARM.AllGpuMain.Remove(i);
                 GARM.RX_9000.Remove(i);

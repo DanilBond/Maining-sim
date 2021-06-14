@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
   m_Name: RX9000
   m_EditorClassIdentifier: 
-  Name: Radeon
-  GP: RX 9000
+  Name: RedMD
+  GP: RED Ruby XT
   Power: 750
-  Cost: 25000
+  Cost: 0
   Temperature: 0
-  Earning: 9
-  EarningPerTime: 10
+  Earning: 558
+  EarningPerTime: 51
   sprite: {fileID: 21300000, guid: dbdb4cb2e9dc3914989e4413017f9ab3, type: 3}
   myPrefab: {fileID: 8326251896792660138, guid: a7ffaf11018e1f1479ff1f80f252cbae,
     type: 3}

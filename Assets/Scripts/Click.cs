@@ -51,7 +51,7 @@ public class Click : MonoBehaviour,IPointerClickHandler
                 {
                     if(GARM.AllGpuMain[i].GetComponent<GPUMainPanelObject>().Damage > 1f)
                     {
-                        GARM.AllGpuMain[i].transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+                        GARM.AllGpuMain[i].transform.GetChild(1).GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
                         normCount++;
                     }
                 }

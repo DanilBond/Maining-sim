@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
-  m_Name: Intel1
+  m_Name: IntelTop
   m_EditorClassIdentifier: 
-  Name: Intel
-  GP: Graphics 1
-  Power: 275
-  Cost: 1750
+  Name: RedMD
+  GP: RED 7900 XT
+  Power: 700
+  Cost: 41900
   Temperature: 0
-  Earning: 3.3
-  EarningPerTime: 1.2
-  sprite: {fileID: 21300000, guid: d753cae2895bdc144a77425a16025ad2, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: a2cd6a5471779144da1f7b98ab997c41,
+  Earning: 174
+  EarningPerTime: 16
+  sprite: {fileID: 21300000, guid: b417d24feb24461498ceade5a17dbad1, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: d1dda1e5f5ae55d42ada29198a115de8,
     type: 3}

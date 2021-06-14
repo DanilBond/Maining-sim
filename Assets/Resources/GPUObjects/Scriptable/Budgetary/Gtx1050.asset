@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
-  m_Name: IntelX
+  m_Name: Gtx1050
   m_EditorClassIdentifier: 
-  Name: Intel
-  GP: X
-  Power: 250
-  Cost: 3000
+  Name: Greenvidia
+  GP: GTX 1040TI
+  Power: 150
+  Cost: 1150
   Temperature: 0
-  Earning: 4
-  EarningPerTime: 1.5
-  sprite: {fileID: 21300000, guid: f952013bc1f501148a33d4164d479aef, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: 63a9d8888667ac745a9b1d79148e1d2d,
+  Earning: 3.5
+  EarningPerTime: 0.8
+  sprite: {fileID: 21300000, guid: b85368344c59b5c46ae80fd55959f1d1, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: 6cdf6a6d6c92df344accb872b21651c0,
     type: 3}

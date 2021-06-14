@@ -9,20 +9,27 @@ public class GPUObject : MonoBehaviour
     public Image img;
     public Sprite Sprite;
     public GPUData data;
-
+    public Image statusImg;
     public float damage;
-
+    public Text NameText;
     private void Start()
     {
         img.sprite = data.sprite;
+        NameText.text = "Видеокарта " + data.GP;
     }
     public void UpdateValues(float Damage)
     {
-        if(damage >= 99f)
+        damageTxt.text = Damage.ToString("0") + "%";
+        if (damage >= 99f)
         {
             damage = 100f;
+            statusImg.gameObject.SetActive(false);
         }
-        damageTxt.text = Damage.ToString("0") + "%";
+        else
+        {
+            statusImg.gameObject.SetActive(true);
+        }
+        
         if (Damage < 35f) { damageTxt.color = Color.red; }
         if (Damage >= 35f && Damage <= 60f) { damageTxt.color = Color.yellow; }
         if (Damage > 60f) { damageTxt.color = Color.green; }
@@ -33,7 +40,8 @@ public class GPUObject : MonoBehaviour
     public void Sell()
     {
         Destroy(gameObject);
-        FindObjectOfType<MoneyManager>().AddMoney(data.Cost);
+        FindObjectOfType<MoneyManager>().AddMoney((int)(data.Cost * damage / 100));
+        Debug.Log((int)(data.Cost * damage / 100));
         GetComponent<GPUPopUp>().GpuPopUp.SetActive(false);
         FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Remove(gameObject);
 
@@ -49,7 +57,7 @@ public class GPUObject : MonoBehaviour
     public void Work()
     {
         Destroy(gameObject);
-        FindObjectOfType<MoneyManager>().AddMoney(data.Cost);
+       // FindObjectOfType<MoneyManager>().AddMoney(data.Cost);
         GetComponent<GPUPopUp>().GpuPopUp.SetActive(false);
         FindObjectOfType<GPUandRIGManager>().AllGpuObjects.Remove(gameObject);
         FindObjectOfType<GPUandRIGManager>().BuyGpu(data.myPrefab);

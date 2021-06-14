@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GPUandRIGManager : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class GPUandRIGManager : MonoBehaviour
 
 
     public List<GameObject> UpgradeList;
+    public GameObject GPUStackInfo;
     //public List<GameObject> BudgetaryGPU;
     //public List<GameObject> MiddleGPU;
     //public List<GameObject> LuxGPU;
@@ -92,7 +94,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 GTX1050.Clear();
                 BuyGpu(UpgradeList[1]);
-                Debug.Log("1");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[1].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[1].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[1].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[1].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[1].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[1].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[1].GetComponent<GPU>().data.Cost + "$";
             }
             if (Graphics_1.Count >= 3)
             {
@@ -105,7 +115,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 Graphics_1.Clear();
                 BuyGpu(UpgradeList[3]);
-                Debug.Log("3");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[3].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[3].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[3].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[3].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[3].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[3].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[3].GetComponent<GPU>().data.Cost + "$";
             }
             if (RX_5600.Count >= 3)
             {
@@ -118,7 +136,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RX_5600.Clear();
                 BuyGpu(UpgradeList[2]);
-                Debug.Log("2");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[2].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[2].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[2].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[2].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[2].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[2].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[2].GetComponent<GPU>().data.Cost + "$";
             }
             if (RTX_3090.Count >= 3)
             {
@@ -131,7 +157,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RTX_3090.Clear();
                 BuyGpu(UpgradeList[4]);
-                Debug.Log("4");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[4].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[4].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[4].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[4].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[4].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[4].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[4].GetComponent<GPU>().data.Cost + "$";
             }
             if (RX_570.Count >= 3)
             {
@@ -144,7 +178,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RX_570.Clear();
                 BuyGpu(UpgradeList[6]);
-                Debug.Log("6");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[6].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[6].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[6].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[6].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[6].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[6].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[6].GetComponent<GPU>().data.Cost + "$";
             }
             if (X.Count >= 3)
             {
@@ -157,7 +199,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 X.Clear();
                 BuyGpu(UpgradeList[5]);
-                Debug.Log("5");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[5].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[5].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[5].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[5].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[5].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[5].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[5].GetComponent<GPU>().data.Cost + "$";
             }
             if (RTX_2060_Super.Count >= 3)
             {
@@ -170,7 +220,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RTX_2060_Super.Clear();
                 BuyGpu(UpgradeList[7]);
-                Debug.Log("7");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[7].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[7].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[7].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[7].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[7].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[7].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[7].GetComponent<GPU>().data.Cost + "$";
             }
             if (RX_590.Count >= 3)
             {
@@ -183,7 +241,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RX_590.Clear();
                 BuyGpu(UpgradeList[8]);
-                Debug.Log("8");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[8].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[8].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[8].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[8].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[8].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[8].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[8].GetComponent<GPU>().data.Cost + "$";
             }
             if (RX_6700XT.Count >= 3)
             {
@@ -196,7 +262,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RX_6700XT.Clear();
                 BuyGpu(UpgradeList[11]);
-                Debug.Log("9");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[11].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[11].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[11].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[11].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[11].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[11].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[11].GetComponent<GPU>().data.Cost + "$";
             }
             if (RTX_4000.Count >= 3)
             {
@@ -209,7 +283,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RTX_4000.Clear();
                 BuyGpu(UpgradeList[10]);
-                Debug.Log("10");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[10].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[10].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[10].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[10].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[10].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[10].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[10].GetComponent<GPU>().data.Cost + "$";
             }
             if (XE.Count >= 3)
             {
@@ -222,7 +304,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 XE.Clear();
                 BuyGpu(UpgradeList[9]);
-                Debug.Log("11");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[9].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[9].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[9].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[9].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[9].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[9].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[9].GetComponent<GPU>().data.Cost + "$";
             }
             if (RX_6900.Count >= 3)
             {
@@ -235,7 +325,15 @@ public class GPUandRIGManager : MonoBehaviour
                 }
                 RX_6900.Clear();
                 BuyGpu(UpgradeList[12]);
-                Debug.Log("12");
+                GPUStackInfo.SetActive(true);
+                GPUStackInfo.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = UpgradeList[12].GetComponent<GPU>().data.sprite;
+                GPUStackInfo.transform.GetChild(0).GetChild(4).GetComponent<Text>().text =
+                UpgradeList[12].GetComponent<GPU>().data.Name + "\n" +
+                UpgradeList[12].GetComponent<GPU>().data.GP + "\n" +
+                UpgradeList[12].GetComponent<GPU>().data.Power + "W" + "\n" +
+                UpgradeList[12].GetComponent<GPU>().data.Earning + "$" + "\n" +
+                UpgradeList[12].GetComponent<GPU>().data.EarningPerTime + "$" + "\n"
+                + UpgradeList[12].GetComponent<GPU>().data.Cost + "$";
             }
 
 
@@ -338,49 +436,49 @@ public class GPUandRIGManager : MonoBehaviour
             AllGpu.Add(GpuMI);
             switch (gpu.GetComponent<GPU>().data.GP)
             {
-                case "1050 TI":
+                case "GTX 1040TI":
                     GTX1050.Add(GpuMI);
                     break;
-                case "Graphics 1":
+                case "Graphics 1X":
                     Graphics_1.Add(GpuMI);
                     break;
-                case "X":
+                case "Graphics XS":
                     X.Add(GpuMI);
                     break;
-                case "RTX 3090":
+                case "RTX 2000":
                     RTX_3090.Add(GpuMI);
                     break;
-                case "RX 570":
+                case "REDEON 580":
                     RX_570.Add(GpuMI);
                     break;
-                case "RED":
+                case "RED 7900 XT":
                     XE.Add(GpuMI);
                     break;
-                case "RTX 2060 Super":
+                case "RTX 2077 S":
                     RTX_2060_Super.Add(GpuMI);
                     break;
-                case "RTX 4000":
+                case "RTX 4000G":
                     RTX_4000.Add(GpuMI);
                     break;
-                case "RX 590":
+                case "Graphics Blue+":
                     RX_590.Add(GpuMI);
                     break;
-                case "RX 5600":
+                case "RED RX 475":
                     RX_5600.Add(GpuMI);
                     break;
-                case "RX 6700XT":
+                case "RED 6700XT":
                     RX_6700XT.Add(GpuMI);
                     break;
-                case "RX 6900":
+                case "Blue GOLD XE":
                     RX_6900.Add(GpuMI);
                     break;
-                case "RTX 5000":
+                case "Briliant Blue":
                     RTX_5000.Add(GpuMI);
                     break;
-                case "RX 9000":
+                case "RED Ruby XT":
                     RX_9000.Add(GpuMI);
                     break;
-                case "Predator":
+                case "RTX Emerald":
                     Intel_Predator.Add(GpuMI);
                     break;
             }

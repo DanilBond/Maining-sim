@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868b62b4041dbf4a9c9c32597d9cc51, type: 3}
-  m_Name: RTX4000
+  m_Name: IntelX
   m_EditorClassIdentifier: 
-  Name: Nvidia
-  GP: RTX 4000
-  Power: 600
-  Cost: 8000
+  Name: Bluentel
+  GP: Graphics XS
+  Power: 250
+  Cost: 3600
   Temperature: 0
-  Earning: 7
-  EarningPerTime: 4
-  sprite: {fileID: 21300000, guid: 8ab9b2e8f84ff074eb9ba0e227621e6d, type: 3}
-  myPrefab: {fileID: 8326251896792660138, guid: a6a1f39eb8ddb284f88b4474e30f94cb,
+  Earning: 11
+  EarningPerTime: 3.6
+  sprite: {fileID: 21300000, guid: f952013bc1f501148a33d4164d479aef, type: 3}
+  myPrefab: {fileID: 8326251896792660138, guid: 63a9d8888667ac745a9b1d79148e1d2d,
     type: 3}
